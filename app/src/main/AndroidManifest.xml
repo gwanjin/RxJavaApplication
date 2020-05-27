@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".HelloActivityV3"></activity>
         <activity
             android:name=".HelloActivity"
             android:label="@string/title_activity_hello"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HelloActiviry"
             android:label="@string/title_activity_hello_activiry"
