@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.information.rxjavaapplication.fragments.DebounceFragment;
 import com.information.rxjavaapplication.fragments.MainFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         if(savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(android.R.id.content, new MainFragment(), MainFragment.TAG).commit();
             getSupportFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new MainFragment(), MainFragment.TAG).commit();
+                    .replace(android.R.id.content, new DebounceFragment()).commit();
         }
     }
 
