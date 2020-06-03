@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+ext {
+    sdkVersion= 29
+    supportLibVersion= "29.0.0"
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -46,6 +51,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'

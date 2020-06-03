@@ -72,8 +72,6 @@ public class DebounceSearchFragment extends Fragment {
                 .filter(s -> !TextUtils.isEmpty(s.text().toString()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(getObserverLib());
-
-
     }
 
     @Override

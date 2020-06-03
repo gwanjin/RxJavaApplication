@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.information.rxjavaapplication.fragments.DebounceFragment;
 import com.information.rxjavaapplication.fragments.DebounceSearchFragment;
 import com.information.rxjavaapplication.fragments.MainFragment;
+import com.information.rxjavaapplication.fragments.RecyclerViewFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -44,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
 //                    .replace(android.R.id.content, new MainFragment(), MainFragment.TAG).commit();
 //            getSupportFragmentManager().beginTransaction()
 //                    .replace(android.R.id.content, new DebounceFragment()).commit();
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(android.R.id.content, new DebounceSearchFragment()).commit();
             getSupportFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new DebounceSearchFragment()).commit();
+                    .replace(android.R.id.content, new RecyclerViewFragment()).commit();
         }
     }
 
