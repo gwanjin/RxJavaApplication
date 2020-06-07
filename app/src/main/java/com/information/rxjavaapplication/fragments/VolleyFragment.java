@@ -19,7 +19,6 @@ import com.information.rxjavaapplication.volley.LocalVolley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -35,7 +34,9 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class VolleyFragment extends Fragment {
-    public static final String URL = "http://time.jsontest.com/";
+    private final String APP_ID = "";
+    static final String GOO_URL = "https://labs.goo.ne.jp/api/hiragana";
+
     @BindView(R.id.vf_lv_log)
     ListView mLogView;
     private Unbinder mUnbinder;
@@ -118,6 +119,7 @@ public class VolleyFragment extends Fragment {
      * @return
      */
     private Observable<JSONObject> getObservableFromCallable() {
+//        return Observable.fromCallable(() -> this.getData());
         return Observable.fromCallable(this::getData);
     }
 
@@ -145,7 +147,15 @@ public class VolleyFragment extends Fragment {
      */
     private RequestFuture<JSONObject> getFuture() {
         RequestFuture<JSONObject> future = RequestFuture.newFuture();
-        JsonObjectRequest req = new JsonObjectRequest(URL, null, future, future);
+        JSONObject json = new JSONObject();
+        try {
+            json.put("app_id", APP_ID);
+            json.put("sentence", "今朝は");
+            json.put("output_type", "hiragana");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JsonObjectRequest req = new JsonObjectRequest(GOO_URL, json, future, future);
         LocalVolley.getRequestQueue().add(req);
         return future;
     }
