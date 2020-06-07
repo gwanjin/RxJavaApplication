@@ -3,6 +3,7 @@ package com.information.rxjavaapplication.activitys;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -85,6 +86,29 @@ public class TimerActivity extends AppCompatActivity {
             mCountDownTimer.cancel();
     }
 
+    private Handler mHandler;
+    private Runnable timer = new Runnable() {
+        @Override
+        public void run() {
+            mTextView.setText(String.valueOf(count++));
+            mHandler.postDelayed(this, 1000);
+        }
+    };
+
+    private void initHandler() {
+        mHandler = new Handler();
+    }
+
+    public void handlerStart() {
+        count = 0;
+        mHandler.postDelayed(timer, 0);
+    }
+
+    public void handlerStop() {
+        if(mHandler!=null)
+            mHandler.removeCallbacksAndMessages(null);
+    }
+
     @OnClick(R.id.button)
     void timerTask() {
         stop();
@@ -97,13 +121,17 @@ public class TimerActivity extends AppCompatActivity {
         countDownTimerStart();
     }
 
+    @OnClick(R.id.button3)
+    void handler() {
+        stop();
+        handlerStart();
+    }
+
     public void stop() {
         timerStop();
         countDownStop();
+        handlerStop();
     }
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,5 +140,6 @@ public class TimerActivity extends AppCompatActivity {
         mUnbinder = ButterKnife.bind(this);
 
         initCountDownTask();
+        initHandler();
     }
 }

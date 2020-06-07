@@ -11,7 +11,10 @@ import com.information.rxjavaapplication.fragments.AsyncTaskFragment;
 import com.information.rxjavaapplication.fragments.DebounceFragment;
 import com.information.rxjavaapplication.fragments.DebounceSearchFragment;
 import com.information.rxjavaapplication.fragments.MainFragment;
+import com.information.rxjavaapplication.fragments.PollingFragment;
 import com.information.rxjavaapplication.fragments.RecyclerViewFragment;
+import com.information.rxjavaapplication.fragments.VolleyFragment;
+import com.information.rxjavaapplication.volley.LocalVolley;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -56,8 +59,12 @@ public class MainActivity extends AppCompatActivity {
 //                    .replace(android.R.id.content, new AsyncTaskFragment()).commit();
 //            Intent intent = new Intent(getApplicationContext(), AsyncActivity.class);
 //            startActivity(intent);
-            Intent intent = new Intent(getApplicationContext(), TimerActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(getApplicationContext(), TimerActivity.class);
+//            startActivity(intent);
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(android.R.id.content, new PollingFragment()).commit();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new VolleyFragment()).commit();
         }
     }
 
