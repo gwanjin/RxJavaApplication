@@ -11,6 +11,7 @@ import com.information.rxjavaapplication.fragments.AsyncTaskFragment;
 import com.information.rxjavaapplication.fragments.DebounceFragment;
 import com.information.rxjavaapplication.fragments.DebounceSearchFragment;
 import com.information.rxjavaapplication.fragments.MainFragment;
+import com.information.rxjavaapplication.fragments.OkHttpFragment;
 import com.information.rxjavaapplication.fragments.PollingFragment;
 import com.information.rxjavaapplication.fragments.RecyclerViewFragment;
 import com.information.rxjavaapplication.fragments.VolleyFragment;
@@ -63,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //            getSupportFragmentManager().beginTransaction()
 //                    .replace(android.R.id.content, new PollingFragment()).commit();
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(android.R.id.content, new VolleyFragment()).commit();
             getSupportFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new VolleyFragment()).commit();
+                    .replace(android.R.id.content, OkHttpFragment.newInstance()).commit();
         }
     }
 
