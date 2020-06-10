@@ -6,6 +6,8 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.information.rxjavaapplication.activitys.AsyncActivity;
+import com.information.rxjavaapplication.activitys.HelloActivity;
+import com.information.rxjavaapplication.activitys.HelloRxAppActivity;
 import com.information.rxjavaapplication.activitys.TimerActivity;
 import com.information.rxjavaapplication.fragments.AsyncTaskFragment;
 import com.information.rxjavaapplication.fragments.DebounceFragment;
@@ -42,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
 ////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 ////                        .setAction("Action", null).show();
 //
-//                Intent intent = new Intent(getApplicationContext(), HelloActivityV3.class);
-//                startActivity(intent);
 //            }
 //        });
 
@@ -66,8 +66,12 @@ public class MainActivity extends AppCompatActivity {
 //                    .replace(android.R.id.content, new PollingFragment()).commit();
 //            getSupportFragmentManager().beginTransaction()
 //                    .replace(android.R.id.content, new VolleyFragment()).commit();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, OkHttpFragment.newInstance()).commit();
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(android.R.id.content, OkHttpFragment.newInstance()).commit();
+//            Intent intent = new Intent(getApplicationContext(), HelloActivity.class);
+//            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), HelloRxAppActivity.class);
+            startActivity(intent);
         }
     }
 
