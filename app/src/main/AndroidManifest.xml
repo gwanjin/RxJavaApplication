@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".activitys.AsyncActivity" />
         <activity android:name=".activitys.HelloRxAppActivity" />
+        <activity android:name=".activitys.HelloActivityComposite" />
         <activity android:name=".HelloActivityV3" />
         <activity
             android:name=".activitys.HelloActivity"
